@@ -18,11 +18,8 @@ public final class NumberFormatUtils {
      * @throws IllegalArgumentException 引数{@code type}に{@code null}を指定した場合、または、引数{@code s}に{@code null}や{@code 空文字}、ブランク文字列を指定した場合、{@code NumberFormatException}をスローされます。
      */
     public static void isRangeOver(Class<? extends Number> type, String s) {
-        if (StringUtils.isBlank(s))
-            throw new IllegalArgumentException("argument s, specify a non blank string.");
-
-        if (type == null)
-            throw new IllegalArgumentException("argument type, specify a subclass of Number.");
+        Assert.isNotBlank(s);
+        Assert.isNotNull(type);
 
         if (type.equals(Byte.class)) {
             Byte.parseByte(s);

@@ -11,4 +11,17 @@ package jp.ddo.chiroru.utils;
  */
 public final class Assert {
 
+    public static void isNotBlank(String suspect) {
+        isNotBlank(suspect, "specify a non blank string.");
+    }
+
+    public static void isNotBlank(String suspect, String message) {
+        if (StringUtils.isBlank(suspect))
+            throw new IllegalArgumentException("specify a non blank string.");
+    }
+
+    public static void isNotNull(Object suspect) {
+        if (suspect == null)
+            throw new IllegalArgumentException("specify a non null value.");
+    }
 }
