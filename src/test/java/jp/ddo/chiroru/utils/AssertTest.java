@@ -1,4 +1,4 @@
-package jp.ddo.chiroru.snipet;
+package jp.ddo.chiroru.utils;
 
 
 public class AssertTest {
