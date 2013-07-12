@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
- * 数値のフォーマット変換を行うユーティリティです。<br/>
+ * 数値のフォーマット変換を行うユーティリティです.<br/>
  * @author chiroru
- * @seince 1.0.0.1
+ * since 1.0.0.1
  */
 public final class NumberFormatUtils {
 

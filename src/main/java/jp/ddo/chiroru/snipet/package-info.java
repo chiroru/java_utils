@@ -1,0 +1,1 @@
+package jp.ddo.chiroru.snipet;
