@@ -41,8 +41,7 @@ public final class StringUtils {
     /**
      * <p>
      * 指定された文字列が{@code null}、または、空文字の場合に{@code true}を返却します.
-     * </p>
-     * 
+     * </p> 
      * @param suspect　検査対象の文字列
      * @return 指定された文字列が{@code null}、または、空文字の場合に{@code true}
      */
