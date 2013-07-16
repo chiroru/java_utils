@@ -77,7 +77,7 @@ public class H2DatabaseServerResource
         return "jdbc:h2:" + server.getURL() + "/" + dbName;
     }
 
-    private class DatabaseProperties {
+    private static class DatabaseProperties {
         private final Properties props;
         private static final String PROPERTY_FILE_PATH = "test-jdbc.properties";
         private static final String BASE_DIR_KEY = "base.dir";

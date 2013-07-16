@@ -14,8 +14,8 @@ import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
 public abstract class DBUnitTestRule
-        extends AbstractDatabaseTester
-        implements TestRule {
+extends AbstractDatabaseTester
+implements TestRule {
 
     private final String connectionUrl;
     private final String username;
@@ -24,19 +24,19 @@ public abstract class DBUnitTestRule
     public DBUnitTestRule(String driverClass, String connectionUrl) {
         this(driverClass, connectionUrl, null, null);
     }
-    
+
     public DBUnitTestRule(String driverClass,
             String connectionUrl,
             String username,
             String password) {
         this(driverClass, connectionUrl, username, password, null);
     }
-    
+
     public DBUnitTestRule(String driverClass,
-                          String connectionUrl,
-                          String username,
-                          String password,
-                          String schema) {
+            String connectionUrl,
+            String username,
+            String password,
+            String schema) {
         super(schema);
         this.connectionUrl = connectionUrl;
         this.username = username;
@@ -48,7 +48,7 @@ public abstract class DBUnitTestRule
             throw new AssertionError(e);
         }
     }
-    
+
     @Override
     public IDatabaseConnection getConnection() throws Exception {
         Connection conn = null;
@@ -64,39 +64,45 @@ public abstract class DBUnitTestRule
     }
 
     protected void executeQuery(String sql) throws Exception {
-        Connection conn = getConnection().getConnection();
-        conn.createStatement().execute(sql);
-        conn.commit();
-        conn.close();
+        Connection conn = null;
+        try {
+            conn = getConnection().getConnection();
+            conn.createStatement().execute(sql);
+        } finally {
+            if (conn != null) {
+                conn.commit();
+                conn.close();
+            }
+        }
     }
-    
+
     abstract protected IDataSet createDataSet() throws Exception;
-    
+
     @Override
     public Statement apply(final Statement base, Description description) {
-        
+
         return new Statement() {
-          @Override
-          public void evaluate() throws Throwable {
-              before();
-              setDataSet(createDataSet());
-              onSetup();
-              try {
-                  base.evaluate();
-              } finally {
-                  try {
-                      after();
-                  } finally {
-                      onTearDown();
-                  }
-              }
-          }
+            @Override
+            public void evaluate() throws Throwable {
+                before();
+                setDataSet(createDataSet());
+                onSetup();
+                try {
+                    base.evaluate();
+                } finally {
+                    try {
+                        after();
+                    } finally {
+                        onTearDown();
+                    }
+                }
+            }
         };
     }
 
     protected void before() throws Exception {
     }
-    
+
     protected void after() throws Exception {
     }
 }
