@@ -19,13 +19,7 @@ implements PropertyLoader {
 
     @Override
     public Properties load(String path) throws IOException {
-        return load(path, false);
-    }
-
-
-    @Override
-    public Properties load(String path, boolean noCached) throws IOException {
-        if (noCached || !isCached(path)) {
+        if (!isCached(path)) {
             InputStream in = getResourceAsStream(path);
 
             if (in == null)
