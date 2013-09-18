@@ -101,7 +101,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.15</version>
         <configuration>
-          <argLine>${jacocoArgs}</argLine>
           <includes>
             <include>**/*Test.java</include>
           </includes>
