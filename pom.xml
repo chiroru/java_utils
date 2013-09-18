@@ -116,71 +116,71 @@
           <downloadJavadocs>true</downloadJavadocs>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.10</version>
-      </plugin>
-      <!-- http://yamkazu.hatenablog.com/entry/20091214/1260814788 -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>2.5.2</version>
-        <!-- <configuration> <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile> 
-          <includeFilterFile>findbugs-include.xml</includeFilterFile> </configuration> -->
-      </plugin>
+<!--       <plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--         <version>2.10</version> -->
+<!--       </plugin> -->
+<!--       http://yamkazu.hatenablog.com/entry/20091214/1260814788 -->
+<!--       <plugin> -->
+<!--         <groupId>org.codehaus.mojo</groupId> -->
+<!--         <artifactId>findbugs-maven-plugin</artifactId> -->
+<!--         <version>2.5.2</version> -->
+<!--         <configuration> <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile> 
+<!--           <includeFilterFile>findbugs-include.xml</includeFilterFile> </configuration> --> -->
+<!--       </plugin> -->
       <!-- http://szk-takanori.hatenablog.com/entry/20130506/p1 -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.6.2.201302030002</version>
-        <executions>
-          <execution>
-            <id>prepare-agent</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-            <configuration>
-<!--               <propertyName>jacocoArgs</propertyName> -->
-              <includes>
-                <include>jp.ddo.chiroru.*</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>2.0</version>
-      </plugin>
+<!--       <plugin> -->
+<!--         <groupId>org.jacoco</groupId> -->
+<!--         <artifactId>jacoco-maven-plugin</artifactId> -->
+<!--         <version>0.6.2.201302030002</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>prepare-agent</id> -->
+<!--             <phase>test-compile</phase> -->
+<!--             <goals> -->
+<!--               <goal>prepare-agent</goal> -->
+<!--             </goals> -->
+<!--             <configuration> -->
+<!-- <!--               <propertyName>jacocoArgs</propertyName> --> -->
+<!--               <includes> -->
+<!--                 <include>jp.ddo.chiroru.*</include> -->
+<!--               </includes> -->
+<!--             </configuration> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
+<!--       <plugin> -->
+<!--         <groupId>org.codehaus.mojo</groupId> -->
+<!--         <artifactId>sonar-maven-plugin</artifactId> -->
+<!--         <version>2.0</version> -->
+<!--       </plugin> -->
     </plugins>
   </build>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.5</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.10</version>
-        <!-- <configuration> <configLocation>.checkstyle.xml</configLocation> 
-          </configuration> -->
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-        <version>2.5.2</version>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.6.2.201302030002</version>
-      </plugin>
-    </plugins>
-  </reporting>
+<!--   <reporting> -->
+<!--     <plugins> -->
+<!--       <plugin> -->
+<!--         <artifactId>maven-surefire-report-plugin</artifactId> -->
+<!--         <version>2.5</version> -->
+<!--       </plugin> -->
+<!--       <plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-checkstyle-plugin</artifactId> -->
+<!--         <version>2.10</version> -->
+<!--         <configuration> <configLocation>.checkstyle.xml</configLocation> 
+<!--           </configuration> --> -->
+<!--       </plugin> -->
+<!--       <plugin> -->
+<!--         <groupId>org.codehaus.mojo</groupId> -->
+<!--         <artifactId>findbugs-maven-plugin</artifactId> -->
+<!--         <version>2.5.2</version> -->
+<!--       </plugin> -->
+<!--       <plugin> -->
+<!--         <groupId>org.jacoco</groupId> -->
+<!--         <artifactId>jacoco-maven-plugin</artifactId> -->
+<!--         <version>0.6.2.201302030002</version> -->
+<!--       </plugin> -->
+<!--     </plugins> -->
+<!--   </reporting> -->
 </project>
